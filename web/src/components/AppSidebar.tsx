@@ -23,7 +23,7 @@ interface NavItem {
   icon: ComponentType<{ className?: string }>
 }
 
-// One entry per view. FF3 Entropy ships a single view today (Forecast); adding
+// One entry per view. Entropy for Firefly III ships a single view today (Forecast); adding
 // another later is a new row here (+ a router when there's more than one).
 const NAV: NavItem[] = [{ key: 'forecast', label: 'Forecast', icon: CalendarClock }]
 
@@ -45,7 +45,7 @@ export function AppSidebar({ activeView = 'forecast' }: { activeView?: string })
           href="https://42labs.io"
           target="_blank"
           rel="noreferrer"
-          aria-label="FF3 Entropy — by 42labs"
+          aria-label="Entropy for Firefly III — by 42labs"
           className="my-[12px] flex flex-row items-center justify-center gap-[8px] outline-none transition-opacity hover:opacity-80 focus-visible:opacity-80 group-data-[collapsible=icon]:m-0"
         >
           <BrandMark className="h-[42px] w-[42px] shrink-0 text-[var(--logo)] group-data-[collapsible=icon]:h-[26px] group-data-[collapsible=icon]:w-[26px]" />
@@ -80,7 +80,7 @@ export function AppSidebar({ activeView = 'forecast' }: { activeView?: string })
         {/* Row 1 — licence + source, icons only */}
         <div className="flex items-center justify-center gap-[16px]">
           <a
-            href="https://github.com/4242labs/ff3-entropy/blob/main/LICENSE"
+            href="https://github.com/4242labs/ff3e/blob/main/LICENSE"
             target="_blank"
             rel="noreferrer"
             aria-label="AGPL-3.0 licence"
@@ -90,7 +90,7 @@ export function AppSidebar({ activeView = 'forecast' }: { activeView?: string })
             <img src="opensource.svg" alt="AGPL-3.0 licence" className="h-[24px] w-[24px]" />
           </a>
           <a
-            href="https://github.com/4242labs/ff3-entropy"
+            href="https://github.com/4242labs/ff3e"
             target="_blank"
             rel="noreferrer"
             aria-label="Source on GitHub"

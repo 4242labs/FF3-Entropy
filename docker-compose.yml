@@ -1,7 +1,7 @@
 services:
-  ff3-entropy:
+  ff3e:
     build: .
-    image: ff3-entropy
+    image: ff3e
     ports:
       - "${PORT:-8000}:8000"
     environment:
