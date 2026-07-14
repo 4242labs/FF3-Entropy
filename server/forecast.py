@@ -20,12 +20,12 @@ from typing import Optional
 
 import httpx
 
-log = logging.getLogger("ff3-entropy.forecast")
+log = logging.getLogger("ff3e.forecast")
 
 FIREFLY_III_URL = os.environ.get("FIREFLY_III_URL", "").rstrip("/")
 FIREFLY_III_TOKEN = os.environ.get("FIREFLY_III_TOKEN", "")
 MATCH_DAYS = int(os.environ.get("MATCH_DAYS", "5"))  # ± window for a match
-_UA = "ff3-entropy/1.0"
+_UA = "ff3e/1.0"
 _TIMEOUT = httpx.Timeout(30.0)
 
 # direction → (status-when-matched, sign) ; sign is for out/in aggregation

@@ -15,7 +15,7 @@ export function Wordmark({ className }: { className?: string }) {
       viewBox="0 0 219 70"
       fill="currentColor"
       role="img"
-      aria-label="FF3 Entropy"
+      aria-label="Entropy for Firefly III"
       xmlns="http://www.w3.org/2000/svg"
     >
       <text

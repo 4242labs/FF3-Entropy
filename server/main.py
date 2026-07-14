@@ -1,4 +1,4 @@
-"""FF3 Entropy — HTTP server.
+"""Entropy for Firefly III — HTTP server.
 
 Two jobs, and no more:
 
@@ -27,9 +27,9 @@ from fastapi.staticfiles import StaticFiles
 import forecast
 
 logging.basicConfig(level=os.environ.get("LOG_LEVEL", "INFO"))
-log = logging.getLogger("ff3-entropy")
+log = logging.getLogger("ff3e")
 
-app = FastAPI(title="FF3 Entropy", docs_url=None, redoc_url=None)
+app = FastAPI(title="Entropy for Firefly III", docs_url=None, redoc_url=None)
 
 
 def _parse_date(s: Optional[str]) -> Optional[dt.date]:

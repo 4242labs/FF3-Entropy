@@ -1,8 +1,8 @@
-# FF3 Entropy
+# Entropy for Firefly III
 
-![FF3 Entropy — Outstanding view showing an overdue backlog, a needs-review item, and income/expense totals](docs/forecast.png)
+![Entropy for Firefly III — Outstanding view showing an overdue backlog, a needs-review item, and income/expense totals](docs/forecast.png)
 
-**[Live demo →](https://ff3-entropy.42labs.io)** — 100% synthetic data, no Firefly III instance behind it.
+**[Live demo →](https://ff3e.42labs.io)** — 100% synthetic data, no Firefly III instance behind it.
 
 **What's coming, and whether it actually happened.**
 
@@ -10,7 +10,7 @@ Firefly III knows all your recurring transactions — rent, salary, that streami
 subscription. But it won't lay them out in front of you and tell you which ones
 have already landed and which are quietly overdue.
 
-FF3 Entropy does exactly that, and nothing else. It's a read-only **Forecast**
+Entropy for Firefly III does exactly that, and nothing else. It's a read-only **Forecast**
 view: point it at your Firefly III, and it projects every recurring transaction
 forward, then matches each expected occurrence against your real booked
 transactions.
@@ -25,7 +25,7 @@ Every occurrence ends up in one of five states:
 | **Done** | A transfer that went through. |
 | **Needs review** | Its date has passed and no matching transaction turned up. |
 
-That last one is the point of the whole thing. FF3 Entropy never guesses: if it
+That last one is the point of the whole thing. Entropy for Firefly III never guesses: if it
 can't find a real transaction with the same type, the same exact amount, on the
 same account, within a few days of the expected date, it says so instead of
 pretending.
@@ -45,8 +45,8 @@ You need a Firefly III instance and a Personal Access Token
 (*Options → Profile → OAuth → Personal Access Tokens*).
 
 ```bash
-git clone https://github.com/4242labs/ff3-entropy.git
-cd ff3-entropy
+git clone https://github.com/4242labs/ff3e.git
+cd ff3e
 cp .env.example .env      # add your FIREFLY_III_URL and FIREFLY_III_TOKEN
 docker compose up
 ```
@@ -56,13 +56,13 @@ Then open <http://localhost:8000>.
 ## How it fits together
 
 ```
-browser ──▶ FF3 Entropy server ──▶ Firefly III REST API
-  (SPA)      (forecast engine)        (your data, untouched)
+browser ──▶ Entropy server ──▶ Firefly III REST API
+  (SPA)     (forecast engine)   (your data, untouched)
 ```
 
 The server exists for one reason: Firefly III authenticates with a token that
 must never live in browser code, and it doesn't send CORS headers — so the
-browser can't call it directly. FF3 Entropy's server holds the token, reads, and
+browser can't call it directly. The Entropy server holds the token, reads, and
 hands back JSON. **It writes nothing back to Firefly III.** Your recurring
 transactions can stay paused; they'll never auto-post because of this.
 
